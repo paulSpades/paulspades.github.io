@@ -1,3 +1,3 @@
 $(document).ready(function(){
-	$('body').html('jquery works');
+	// $('body').html('jquery works');
 });
