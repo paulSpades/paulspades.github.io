@@ -69,10 +69,14 @@ ul, ol{
 	padding-left: 1em;
 }
 code{
-	background: #ddd;
 	color: #74831B;
 	padding: 0 .2em;
 	font-weight: normal;
+}
+pre{
+	background: #eee;
+	font-size: .8rem;
+	overflow: auto;
 }
 
 /* helpefull classes

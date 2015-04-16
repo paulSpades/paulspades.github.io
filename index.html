@@ -7,6 +7,7 @@
 	<title>Flight Search</title>
 
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic' rel='stylesheet' type='text/css'>
 	<link href="css/fnck.css" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet">
 	
@@ -19,7 +20,43 @@
 	<section id="main">
 		<aside></aside>
 		<div class="container">
-			
+
+			<article>
+				<h3>
+					position: relative
+					<small>
+						CSS floated link/button bug - don't hover and aren't clickable
+					</small>
+				</h3>
+				<script src="https://gist.github.com/paulSpades/46f5a8f22acec47f1768.js"></script>
+
+				<p class="lead">I once had a css reset that started with this: 
+<code><pre>body, a, ul, img, media, video, li, p, dt, dd, table, fieldset, label, input, div, 
+span, small, b, i, em, h1, h2, h3, h4, h5 {
+	margin: 0;
+	border: 0;
+	position: relative;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}</pre></code>
+				</p>
+				<p> I argue it looks pretty standard, as resets go (glossing over the fact that some "wizards" prefer not to reset margins and padding on all elements). So, it sets margins and padding to 0 - fine. Sets position to relative - seems usefull, mostly because I push and pull elements in all directions rather frequently. Sets box-sizing to border-box - which is the css box model proposed by microsoft, most css writters prefer this model nowadays. Fine!</p>
+				<p>There's a problem in that little bit of CSS, though. I was having issues with floated elements for a few months in quite a few projects. One of them had bootstrap and some of my css, one of them was just using this reset and my own lightweight css library. What was the problem, you might ask?</p>
+				<p><b>The floated elements were covered by block elements coming right after them.</b> For example: a simple link floated right and a paragrah after it. The link didn't hover and couldn't be clicked. It was completely covered by the bouding box of the paragraph.</p>
+				<p>That's quite strange, I haven't really had problems with normally flowed elements covering the floated ones. The fix was giving them individual z-index values, but that obviously didn't fix the overall problem. Well, I didn't know there's a bigger problem back then.</p>
+				<p>Today, I stumbled on the same sort of problem again, and thought I'd look deeper into it. A few google searches for similar issues sort of came up with an answer. So, what is the problem with the CSS reset that I was using?</p>
+				<p>This is the problem:
+<code><pre>body, a, ul, img, media, video, li, p, dt, dd, table, fieldset, label, input, div, span, small, b, i, em, h1, h2, h3, h4, h5 {
+	...
+	position: relative;
+	...
+}</pre></code>
+				</p>
+				<p class="lead"> Using <code>position: relative</code> on all html elements pushes them into separate document flows, they each now have a z-index value, they all have a default width of 100%. Paragraphs and headings, for instance, if they don't clear elements that are floated, cover them up. </p>
+				<p>Needless to say, this is bad behaviour that I want to avoid, you probably do too. So, I recommend not setting position to relative on anything other than what you really need it on.</p>
+				<p><b>Remove <code>position: relative</code> from your CSS reset.</b></p>
+			</article>
 		</div>
 	</section>
 	<footer>
