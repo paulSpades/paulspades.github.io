@@ -1,71 +1,484 @@
-<!DOCTYPE html>
-<html>
+<!doctype html><html lang="en">
 <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width" initial-scale="1.0">
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,400i,500,700,900" rel="stylesheet"> 
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/lbp.css">
+	<link rel="stylesheet" href="css/main.css">
+	</head>
+</head><body id="b">
+<header><div class="cont">
 
-	<title>Flight Search</title>
+<button id="toggleMain"><i class="fa fa-bars"></i></button>
+<nav id="mainNav">
+	<a href="#work">work</a>
+	<a href="#lab">lab</a>
+	<a href="#log">log</a>
+	<a href="#info">info</a>
+</nav>
+</div><!--  end .container -->
+</header><main>
+ 
 
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic' rel='stylesheet' type='text/css'>
-	<link href="css/fnck.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
-	
-</head>
-<body>
-	<aside></aside>
-	<header>
-		<div class="container"></div>
-	</header>
-	<section id="main">
-		<aside></aside>
-		<div class="container">
 
-			<article>
-				<h3>
-					position: relative
-					<small>
-						CSS floated link/button bug - don't hover and aren't clickable
-					</small>
-				</h3>
-				<script src="https://gist.github.com/paulSpades/46f5a8f22acec47f1768.js"></script>
+<section id="work">
 
-				<p class="lead">I once had a css reset that started with this: 
-<code><pre>body, a, ul, img, media, video, li, p, dt, dd, table, fieldset, label, input, div, 
-span, small, b, i, em, h1, h2, h3, h4, h5 {
-	margin: 0;
-	border: 0;
-	position: relative;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}</pre></code>
-				</p>
-				<p> I argue it looks pretty standard, as resets go (glossing over the fact that some "wizards" prefer not to reset margins and padding on all elements). So, it sets margins and padding to 0 - fine. Sets position to relative - seems usefull, mostly because I push and pull elements in all directions rather frequently. Sets box-sizing to border-box - which is the css box model proposed by microsoft, most css writters prefer this model nowadays. Fine!</p>
-				<p>There's a problem in that little bit of CSS, though. I was having issues with floated elements for a few months in quite a few projects. One of them had bootstrap and some of my css, one of them was just using this reset and my own lightweight css library. What was the problem, you might ask?</p>
-				<p><b>The floated elements were covered by block elements coming right after them.</b> For example: a simple link floated right and a paragrah after it. The link didn't hover and couldn't be clicked. It was completely covered by the bouding box of the paragraph.</p>
-				<p>That's quite strange, I haven't really had problems with normally flowed elements covering the floated ones. The fix was giving them individual z-index values, but that obviously didn't fix the overall problem. Well, I didn't know there's a bigger problem back then.</p>
-				<p>Today, I stumbled on the same sort of problem again, and thought I'd look deeper into it. A few google searches for similar issues sort of came up with an answer. So, what is the problem with the CSS reset that I was using?</p>
-				<p>This is the problem:
-<code><pre>body, a, ul, img, media, video, li, p, dt, dd, table, fieldset, label, input, div, span, small, b, i, em, h1, h2, h3, h4, h5 {
-	...
-	position: relative;
-	...
-}</pre></code>
-				</p>
-				<p class="lead"> Using <code>position: relative</code> on all html elements pushes them into separate document flows, they each now have a z-index value, they all have a default width of 100%. Paragraphs and headings, for instance, if they don't clear elements that are floated, cover them up. </p>
-				<p>Needless to say, this is bad behaviour that I want to avoid, you probably do too. So, I recommend not setting position to relative on anything other than what you really need it on.</p>
-				<p><b>Remove <code>position: relative</code> from your CSS reset.</b></p>
-			</article>
-		</div>
-	</section>
-	<footer>
-		<div class="container">
-			
-		</div>
-	</footer>
+	<article class="work-proj" id="work/0">
+					<img id="banner" src="proj/banners/ccam-shop1.png">
+				<div class="cont">
+			<h2> 
+				<b>00</b> CCS/shop <br>
+				<a href="#work" class="backTo">
+					<i class="fa fa-arrow-circle-left"></i> WORK
+				</a>
+			</h2>
+			<table class="stats">
+									<tr><th>client</th><td>Candycam Shop</td></tr>
+									<tr><th>proj_type</th><td>Web Store</td></tr>
+									<tr>
+						<th>link</th>
+						<td> 
+							<a href="https://candycam.shop/shop/"> candycam.shop </a>
+						</td>
+					</tr>
+									<tr>
+						<th>role</th>
+						<td>
+							Graphic Design; UX; Interaction Design; Client-Side Development; Wordpress Theme Development; 						</td>
+					</tr>
+									<tr>
+						<th>tech</th>
+						<td>
+							HTML5+CSS; JS/ECMAScript; jQuery; Bootstrap; PHP; Wordpress; WooCommerce; 						</td>
+					</tr>
+									<tr>
+						<th>date</th>
+						<td> Dec 2016 </td>
+					</tr>
+							</table>
+							<div class="description">
+					<p class="lead"> Candycam.shop is a photography-oriented web shop that ships cameras and related accesories around the world.</p>
+<img class="fw" src="proj/ccam-shop/4.jpg"> 
+<p>The website uses Wordpress with the WooCommerce plugin and a modified version of the Storefront theme.</p>
+<img class="in c" src="proj/ccam-shop/1.png"> 
+<p> I designed the branding, installed and tweaked the Wordpress instalation and modified the theme to better represent the brand. The UI is simplified and straight-forward for a streamlined shopping experience. And mobile-friendly, of course.</p>
+<img class="in c" src="proj/ccam-shop/2.png"> 
+<p>The single challege I came up against was theme hooks, as the concept didn't really exist 3-4 years ago when I've first learned to develop for Wordpress. But that was easily remedied in a few days, and I quickly managed to get up to speed on the latest best practices.</p>
+<img class="in c" src="proj/ccam-shop/3.png">
 
-	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-	<script src="js/functions.js"></script>
-</body>
-</html>
+				</div>
+					</div>
+	</article>
+	<article class="work-proj" id="work/1">
+					<img id="banner" src="proj/banners/ssm-app.png">
+				<div class="cont">
+			<h2> 
+				<b>01</b> SSM <br>
+				<a href="#work" class="backTo">
+					<i class="fa fa-arrow-circle-left"></i> WORK
+				</a>
+			</h2>
+			<table class="stats">
+									<tr><th>client</th><td>an old and busy DJ</td></tr>
+									<tr><th>proj_type</th><td>Mockup/Prototype</td></tr>
+									<tr>
+						<th>link</th>
+						<td> 
+							<a href="https://www.mixcloud.com/seisme/"> SEISME on Mixcloud </a>
+						</td>
+					</tr>
+									<tr>
+						<th>role</th>
+						<td>
+							Graphic Design; Product Design; UX; Interaction Design; 						</td>
+					</tr>
+									<tr>
+						<th>date</th>
+						<td> 2016 </td>
+					</tr>
+							</table>
+							<div class="description">
+					<p class="lead"> 
+	SEISME is DJ Podcast focusing on electronic music - Breakbeat, Drum&Bass, Funk and UK-Garage with a Romanian target audience, hosted by a friend of mine.
+</p>
+<img class="fw" src="proj/ssm/2.png">
+<img class="in c" src="proj/ssm/3.png">
+<p>
+	The podcast was initially going to be hosted on Mixcloud.com. As I was developing the branding and visual style, he decided to also have me develop a web app that hosts and streams the podcast. The app is soon to be live this summer, and this is one of the mockups for the UI.
+</p>
+<img class="in c" src="proj/ssm/1.jpg">
+				</div>
+					</div>
+	</article>
+	<article class="work-proj" id="work/2">
+					<img id="banner" src="proj/banners/ts-web.png">
+				<div class="cont">
+			<h2> 
+				<b>02</b> TS/web <br>
+				<a href="#work" class="backTo">
+					<i class="fa fa-arrow-circle-left"></i> WORK
+				</a>
+			</h2>
+			<table class="stats">
+									<tr><th>client</th><td>Trip Solutions (in-house project)</td></tr>
+									<tr><th>proj_type</th><td>Static Web Site</td></tr>
+									<tr>
+						<th>link</th>
+						<td> 
+							<a href="http://tripsolutions.co.uk"> tripsolutions.co.uk </a>
+						</td>
+					</tr>
+									<tr>
+						<th>role</th>
+						<td>
+							Graphic Design; UX; Interaction Design; Client-Side Development; 						</td>
+					</tr>
+									<tr>
+						<th>tech</th>
+						<td>
+							HTML5+CSS; JS/ECMAScript; jQuery; PHP; Mobile-First; 						</td>
+					</tr>
+									<tr>
+						<th>date</th>
+						<td> 2015 </td>
+					</tr>
+							</table>
+							<div class="description">
+					<p class="lead"> Trip Solutions is a travel software developer based in the UK and Romania.</p>
+<p>I was employed with Trip solutions for 5 years as a designer and front-end developer. I've designed and developed everything from travel agency websites to custom icons, complex booking UIs to flight tickets and Trip Solution's own brand and websites. </p>
+<img class="fw" src="proj/ts-web/1.jpg">
+<p> I've also designed the previous iteration of this website, but the design language we were growing into warranted a fresh new look for our own online presence.</p> 
+<img class="in c" src="proj/ts-web/old.png"> 
+<p>The website is mostly static on the back-end and it features a light, mobile-first front-end with striking colour but less distraction. Keeping with the mobile-first philosopy is also the full-screen navigation menu that also carries over on desktop resolutions.</p>
+<img class="in c" src="proj/ts-web/nav.png">
+<img class="in c third" src="proj/ts-web/home.png">
+<img class="in c third" src="proj/ts-web/about.png">
+<img class="in c third" src="proj/ts-web/contact.png">
+
+<p><small>This project was completed while I was employed at <a href="http://www.tripsolutions.co.uk">Trip Solutions</a>.</small></p>
+				</div>
+					</div>
+	</article>
+	<article class="work-proj" id="work/3">
+					<img id="banner" src="proj/banners/gwa.png">
+				<div class="cont">
+			<h2> 
+				<b>03</b> GWA/web <br>
+				<a href="#work" class="backTo">
+					<i class="fa fa-arrow-circle-left"></i> WORK
+				</a>
+			</h2>
+			<table class="stats">
+									<tr><th>client</th><td>PremiumIT Technologies </td></tr>
+									<tr><th>proj_type</th><td>Public Web App</td></tr>
+									<tr>
+						<th>link</th>
+						<td> 
+							<a href="https://www.gowildaffiliates.com"> gowildaffiliates.com </a>
+						</td>
+					</tr>
+									<tr>
+						<th>role</th>
+						<td>
+							Interaction Design; Client-Side Development; 						</td>
+					</tr>
+									<tr>
+						<th>tech</th>
+						<td>
+							HTML5+CSS; JS/ECMAScript; jQuery; PHP; Mobile-First; 						</td>
+					</tr>
+									<tr>
+						<th>date</th>
+						<td> 2016 </td>
+					</tr>
+							</table>
+							<div class="description">
+					<p class="lead"> GoWild Affiliates is the affiliate website for GoWild and other sister online brands.</p>
+<img class="fw" src="proj/gwa/4.jpg">
+<p> I only worked as a front-end developer while at <i>Premium IT Technologies</i> and on this project, but I did make an effort to work very closely with the UX department and the designers. That being said, most of the interaction design and all of the front-end implementation is my own work.</p>
+<img class="in c half" src="proj/gwa/1.png">
+<img class="in c half" src="proj/gwa/2.png"> 
+<p><small>This project was completed while I was employed at <a href="http://www.pitt.com.ro/">Premium IT Technologies</a>.</small></p>				</div>
+					</div>
+	</article>
+	<article class="work-proj" id="work/4">
+					<img id="banner" src="proj/banners/chr-b2b.png">
+				<div class="cont">
+			<h2> 
+				<b>04</b> CHR/b2b <br>
+				<a href="#work" class="backTo">
+					<i class="fa fa-arrow-circle-left"></i> WORK
+				</a>
+			</h2>
+			<table class="stats">
+									<tr><th>client</th><td>Cristian Tour</td></tr>
+									<tr><th>proj_type</th><td>Private Web App</td></tr>
+									<tr>
+						<th>role</th>
+						<td>
+							UX; Interaction Design; Client-Side Development; 						</td>
+					</tr>
+									<tr>
+						<th>tech</th>
+						<td>
+							HTML5+CSS; JS/ECMAScript; jQuery; WooCommerce; 						</td>
+					</tr>
+									<tr>
+						<th>date</th>
+						<td> 2015 </td>
+					</tr>
+							</table>
+							<div class="description">
+					<p class="lead"> Christian Tour is one of the main tour operators in Romania. They aproached us with building a new B2B app for their brand new Moldavia branch.</p>
+<p>We knew we didn't want to base it on CHR's existing B2B web app, since it was showing its age and it needed to be updated or redone.</p>
+<img class="fw" src="proj/chr-b2b/1.jpg">
+<p>Our solution was to present a whole new UI based on their newly refresed identity and take advantage of new technology. This also enabled us to quickly turn over a version for their main, aging B2B app.</p>
+<img class="in c" src="proj/chr-b2b/home.png"> 
+<p>I developed the new design and UI, and implemented the front-end markup (AngularJS templates) and CSS. The UI is based on Angular UI and Bootstrap.</p>
+<img class="in c half" src="proj/chr-b2b/hotel-info.png"> 
+<img class="in c half" src="proj/chr-b2b/conf-booking.png"> 
+<p><small>This project was completed while I was employed at <a href="http://www.tripsolutions.co.uk">Trip Solutions</a>.</small></p>				</div>
+					</div>
+	</article>
+	<article class="work-proj" id="work/5">
+					<img id="banner" src="proj/banners/goa-web.png">
+				<div class="cont">
+			<h2> 
+				<b>05</b> GOA/web <br>
+				<a href="#work" class="backTo">
+					<i class="fa fa-arrow-circle-left"></i> WORK
+				</a>
+			</h2>
+			<table class="stats">
+									<tr><th>client</th><td>Goa Way & Czech-It-Out</td></tr>
+									<tr><th>proj_type</th><td>Mockup/Prototype</td></tr>
+									<tr>
+						<th>role</th>
+						<td>
+							Graphic Design; UX; Interaction Design; Client-Side Development; 						</td>
+					</tr>
+									<tr>
+						<th>date</th>
+						<td> 2015 </td>
+					</tr>
+							</table>
+							<div class="description">
+					<p class="lead"> I was tasked with creating a new, modern design for Goaway & Czeck-It-Out's website that was to be responsive and take advange of the new web technologies. </p>
+<img class="fw" src="proj/goa-web/1.jpg">
+<p>I started by refreshing the brand image and implementing a clean grid-like structure aided by bold typography and broken up by a wave-like graphic to add some graphical movement. </p>
+<img class="in c" src="proj/goa-web/home.jpg"> 
+<p>Sadly, the project didn't move forward past the mockup stage for various business reasons, although it received very good feedback.</p>
+<img class="in c half" src="proj/goa-web/tour1.jpg"> 
+<img class="in c half" src="proj/goa-web/tour2.jpg"> 
+<p><small>This project was completed while I was employed at <a href="http://www.tripsolutions.co.uk">Trip Solutions</a>.</small></p>				</div>
+					</div>
+	</article>
+	<article class="work-proj" id="work/6">
+					<img id="banner" src="proj/banners/etrip-agency.png">
+				<div class="cont">
+			<h2> 
+				<b>06</b> eT-A <br>
+				<a href="#work" class="backTo">
+					<i class="fa fa-arrow-circle-left"></i> WORK
+				</a>
+			</h2>
+			<table class="stats">
+									<tr><th>client</th><td>Trip Solutions (in-house project)</td></tr>
+									<tr><th>proj_type</th><td>Private Web App</td></tr>
+									<tr>
+						<th>link</th>
+						<td> 
+							<a href="http://www.etrip-agency.com/"> etrip-agency.com </a>
+						</td>
+					</tr>
+									<tr>
+						<th>role</th>
+						<td>
+							Graphic Design; UX; Interaction Design; Client-Side Development; 						</td>
+					</tr>
+									<tr>
+						<th>date</th>
+						<td> 2013-2014 </td>
+					</tr>
+							</table>
+							<div class="description">
+					<p class="lead"> Etrip Agency is a web-based booking management software for smaller travel agencies and independent travel agents. The software integrates with the Trip Solutions flight booking API and some of their partner tour operator's APIs. </p>
+<img class="fw" src="proj/etrip-agency/1.jpg">
+<p>My role in the project was to design and implement a new, user-friendly UI that was also usable on mobile devices. Because the software is rather complex, I had to design a system of consistent but flexible modules and clearly separate the navigation from actions. </p>
+<p> I did a lot of work on optimizing user paths and trying to mimize user error. As a result, the UI is almost universaly acclaimed by our clients as being simple, understandable and effective. </p> 
+<img class="in c" src="proj/etrip-agency/booking2.png"> 
+<p><small>This project was completed while I was employed at <a href="http://www.tripsolutions.co.uk">Trip Solutions</a>.</small></p>				</div>
+					</div>
+	</article>
+	<article class="work-proj" id="work/7">
+					<img id="banner" src="proj/banners/shc-web.png">
+				<div class="cont">
+			<h2> 
+				<b>07</b> SHC/web <br>
+				<a href="#work" class="backTo">
+					<i class="fa fa-arrow-circle-left"></i> WORK
+				</a>
+			</h2>
+			<table class="stats">
+									<tr><th>client</th><td>The Swiss Holiday Company</td></tr>
+									<tr><th>proj_type</th><td>Static Web Site</td></tr>
+									<tr>
+						<th>link</th>
+						<td> 
+							<a href="http://www.swissholidayco.com/"> swissholidayco.com </a>
+						</td>
+					</tr>
+									<tr>
+						<th>role</th>
+						<td>
+							Graphic Design; UX; Interaction Design; Client-Side Development; 						</td>
+					</tr>
+									<tr>
+						<th>date</th>
+						<td> Jan 2014 </td>
+					</tr>
+							</table>
+							<div class="description">
+					<p class="lead"> The Swiss Holiday Websites provide varied premium holidays in Switzeland. The Swiss Holiday Company are the premier tour operator in the UK that focus on Switzeland holidays.</p>
+<img class="fw" src="proj/shc-web/2.jpg">
+<p> They requested us to redesign their websites (<a href="">swissholidayco.com</a>, <a href="http://www.swissskico.com/">swissskico.com</a>), and I was in charge of the new designs and front-end implementation.</p>
+<img class="in c" src="proj/shc-web/old.png">
+<p>My design strategy was to keep a minimalistic feel for the websites but use typography and color to achieve better texture.</p>
+<img class="in c" src="proj/shc-web/shc1.png">
+<img class="in c third" src="proj/shc-web/shc2.png">
+<img class="in c third" src="proj/shc-web/shc3.png">
+<img class="in c third" src="proj/shc-web/ssc.png">
+<p> The website is built on top of the new Trip Solutions CMS (eDitto) and I also worked closely with my colleague that integrated the markup to the CMS system.</p> 
+<p><small>This project was completed while I was employed at <a href="http://www.tripsolutions.co.uk">Trip Solutions</a>.</small></p>
+
+				</div>
+					</div>
+	</article>
+	<article class="work-proj" id="work/8">
+					<img id="banner" src="proj/banners/purely-web.png">
+				<div class="cont">
+			<h2> 
+				<b>08</b> PB/web <br>
+				<a href="#work" class="backTo">
+					<i class="fa fa-arrow-circle-left"></i> WORK
+				</a>
+			</h2>
+			<table class="stats">
+									<tr><th>client</th><td>Purely Travel Limited, UK</td></tr>
+									<tr><th>proj_type</th><td>Static Web Site</td></tr>
+									<tr>
+						<th>role</th>
+						<td>
+							Graphic Design; UX; Interaction Design; Client-Side Development; 						</td>
+					</tr>
+									<tr>
+						<th>date</th>
+						<td> Nov 2015 </td>
+					</tr>
+							</table>
+							<div class="description">
+					<p class="lead"> The Purely Bermuda website is a part of a family of destination-centric travel websites by Purely Travel UK. They've partnered with Trip Solution for many years to develop their online business.</p>
+<img class="fw" src="proj/pb-web/2.jpg">
+<p> This design was created and first implemented in 2013 using our new CMS software, but re-done in 2015 to take advantage of Bootstrap 3's new responsive grid system. </p>
+<img class="in c" src="proj/pb-web/old.png">
+<p>One of my challenges was re-coding the slideshow from the header so that it replicates the flash based one (not visible in the screen capture) on their old websites. I reiterated in Javascript until I came to a simple, readable functional programming style solution. </p>
+<img class="in c" src="proj/pb-web/pb1.png">
+<img class="in c third" src="proj/pb-web/pb2.png">
+<img class="in c third" src="proj/pb-web/pb3.png">
+<img class="in c third" src="proj/pb-web/pb4.png">
+<p><small>This project was completed while I was employed at <a href="http://www.tripsolutions.co.uk">Trip Solutions</a>.</small></p>
+				</div>
+					</div>
+	</article>
+
+<div class="cont">
+	<h1>projects</h1>
+	<ul id="projNav">
+			<li class="double">
+			<img src="proj/banners/ccam-shop1.png">
+			<a href="#work/0"> 
+				<b>00</b> CCS/shop				<small>[view project]</small> 
+			</a>
+		</li>
+			<li class="">
+			<img src="proj/banners/ssm-app.png">
+			<a href="#work/1"> 
+				<b>01</b> SSM				<small>[view project]</small> 
+			</a>
+		</li>
+			<li class="dHigh">
+			<img src="proj/banners/ts-web.png">
+			<a href="#work/2"> 
+				<b>02</b> TS/web				<small>[view project]</small> 
+			</a>
+		</li>
+			<li class="">
+			<img src="proj/banners/gwa.png">
+			<a href="#work/3"> 
+				<b>03</b> GWA/web				<small>[view project]</small> 
+			</a>
+		</li>
+			<li class="">
+			<img src="proj/banners/chr-b2b.png">
+			<a href="#work/4"> 
+				<b>04</b> CHR/b2b				<small>[view project]</small> 
+			</a>
+		</li>
+			<li class="">
+			<img src="proj/banners/goa-web.png">
+			<a href="#work/5"> 
+				<b>05</b> GOA/web				<small>[view project]</small> 
+			</a>
+		</li>
+			<li class="">
+			<img src="proj/banners/etrip-agency.png">
+			<a href="#work/6"> 
+				<b>06</b> eT-A				<small>[view project]</small> 
+			</a>
+		</li>
+			<li class="">
+			<img src="proj/banners/shc-web.png">
+			<a href="#work/7"> 
+				<b>07</b> SHC/web				<small>[view project]</small> 
+			</a>
+		</li>
+			<li class="">
+			<img src="proj/banners/purely-web.png">
+			<a href="#work/8"> 
+				<b>08</b> PB/web				<small>[view project]</small> 
+			</a>
+		</li>
+		</nav>
+</div>
+
+<div class="cont cta">
+	<p class="lead">Like what you're seeing? Let's <a href="#info">get to know each other</a> , have a cup of coffee and discuss your next project. I might be able to help. </p>
+</div>
+
+</section><section id="lab"><div class="cont">
+	<h1>lab</h1>
+</div></section><section id="log"><div class="cont">
+	<h1>log</h1>
+</div></section><section id="info"><div class="cont">
+		<h1>info</h1>
+		<p class="lead">
+			<b>My name is Paul. I am a designer and developer</b> that makes things 
+			which live on the World Wide Web.
+		</p>
+		<p>
+			I like contrast, big pixels, paths, vertices, 
+			oscillators, keyframes and functions.
+		</p>
+
+</div></section>	
+</main><footer>
+</footer>
+
+<script src="js/jquery_3.1.1.min.js"></script>
+<script src="js/lightbox.min.js"></script>
+<script src="js/functions.js"></script>
+<script type="application/javascript">
+
+</script></body></html>
