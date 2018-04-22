@@ -10,12 +10,12 @@ html, body{
 body *{
 	box-sizing: border-box;
 }
-#imagelightbox{
+/*#imagelightbox{
 	position: fixed;
 	z-index: 9999;
 	-ms-touch-action: none;
 	touch-action: none;
-}
+}*/
 
 body{
 	background: #009D9B;
@@ -23,7 +23,7 @@ body{
 	font-size: 1.6em;
 	line-height: 1.5em;
 	background: #fff;
-	/*background: linear-gradient(#00D86B 0px, #009D9B 800px);*/
+	background: linear-gradient(#eee 0px, #bbb 800px);
 	background-repeat: none;
 	background-size: 100% 105%;
 }
@@ -38,84 +38,12 @@ header .cont{
 	width: 100%;
 	font-size: 4.8rem;
 	line-height: 5.6rem;
-	transition: all .4s;
 	overflow-x: hidden;
 }
 	.nav-on header .cont{
 		height: 100%;
 	}
-/*#sun{
-	position: absolute;
-	left: 50%;
-	width: 756px;
-	margin-left: -378px;
-	display: block;
-	transition: all .4s; 
-	z-index: 2;
-}
-	#sun.sm .ring{ opacity: .2 }
 
-	.ring{
-		transform-origin: 377px 40px;
-		animation: rotate_rings 99s alternate infinite linear;
-	}
-		.ring:nth-of-type(2), .ring:nth-of-type(4), .ring:nth-of-type(7) {
-			animation: rotate_rings 120s alternate-reverse infinite linear;
-		}
-		
-		.ring:nth-of-type(3), .ring:nth-of-type(5){
-			animation: rotate_rings 140s alternate infinite linear;
-		}
-	#sun g{
-		transform-origin: 377px 40px;
-		animation: anim_particles 60s alternate infinite linear;
-	}
-		#sun g:nth-of-type(1),
-		#sun g:nth-of-type(4),
-		#sun g:nth-of-type(7){
-			animation: anim_particles 120s alternate-reverse infinite linear;
-		}
-		#sun g:nth-of-type(2),
-		#sun g:nth-of-type(6){
-			animation: anim_particles 90s alternate infinite linear;
-		}
-	#sun.on{
-		z-index: 20;
-		transform: scale(4, 4) translate( 0, 160px);
-	}
-*/
-/*#bubbles{
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	z-index: -1;
-}
-	#bubbles path{
-		animation: anim_bubbles 60s alternate-reverse infinite linear;
-	}
-	#bubbles path:nth-of-type(2n){
-		animation: anim_bubbles 60s alternate infinite linear;
-	}
-	#bubbles path:nth-of-type(3n){
-		animation: anim_bubbles 30s alternate-reverse infinite linear;
-	}
-	#bubbles path:nth-of-type(5n){
-		animation: anim_bubbles 20s alternate infinite linear;
-	}
-
-@keyframes rotate_rings{
-	0% 		{transform: rotate(0deg)}
-	100% 	{transform: rotate(960deg)}
-}
-@keyframes anim_particles{
-	0%, 100%{transform: scale(1); opacity: .4;}
-	33%		{transform: scale(.7); opacity: .3;}
-	66%		{transform: scale(1.3); opacity: .1;}
-}
-@keyframes anim_bubbles{
-	0% 		{transform: translate(0,0)}
-	100% 	{transform: translate(0,30%)}
-}*/
 #toggleMain, #mainNav{
 	position: relative;
 	margin: 1em auto;
@@ -134,7 +62,7 @@ header .cont{
 #mainNav{
 	width: 100%;
 	top: -20em;
-	transition: top .5s;
+	transition: top .3s;
 }
 	.nav-on #mainNav{
 		top: 0;
@@ -194,7 +122,6 @@ nav a{
 main{
 	opacity: 1;
 	transition: all .3s;
-	/*padding-top: 10em;*/
 }
 	main:after,
 	body:after{
@@ -215,10 +142,10 @@ main{
 		margin: 0;
 		padding: 0;
 		overflow: hidden;
-		transition: top .9s ease-out;
+		transition: top .2s ease-out;
 		text-align: center;
-		font-size: 1.6rem;
-		line-height: 1.6em;
+		font-size: 2.1rem;
+		line-height: 1.5em;
 		z-index: -1;
 	}
 		main section.on{
@@ -237,26 +164,37 @@ main{
 	main section .cont{
 		width: 90%;
 		margin: 0 auto;
-		transition: all 5s ease-in;
+		transition: all .5s ease-in;
 	}
 
-	h1, h2, h3{
-		font-family: 'Courier', monospace;
-		line-height: 1em;
-		letter-spacing: -1px;
-		color: #FABB01;
-		margin: .5em 0;
-		font-weight: normal;
-	}
-	h1{font-size: 6.4rem; margin: 2em 0 .5em 0; text-align: right;}
-	h2{font-size: 6rem; letter-spacing: 0; color: #055;}
-	h3{font-size: 3rem; text-transform: uppercase; letter-spacing: 6px;}
-		h2 b{
-			color: #eee;
-		}
-.work-proj h2{
-	line-height: .8em;
+h1, h2, h3{
+	font-family: 'Courier', monospace;
+	line-height: 1em;
+	letter-spacing: -1px;
+	margin: .5em 0;
+	font-weight: normal;
 }
+h1{font-size: 6.4rem; margin: 1em 0 .5em 0; text-align: right; color: #fff;}
+h3{font-size: 3.2rem; text-transform: uppercase; letter-spacing: 6px;}
+h2{font-size: 5.8rem; letter-spacing: 0;}
+	h2 b{color: #eee;}
+	.work-proj h2{line-height: .8em;}
+
+.backTo{
+	margin: 1em;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-decoration: none;
+	color: #fff;
+	position: absolute;
+	top: ;
+	z-index: 30;
+	display: none;
+}
+	.on .backTo{
+		display: block;
+	}
+	.backTo .fa{}
 
 .stats{
 	width: 100%;
@@ -268,12 +206,9 @@ main{
 		line-height: 1.5em;
 	}
 	.stats th{
-		font-family: 'Courier', monospace;
-		font-weight: normal;
-		font-size: 2.4rem;
-		line-height: .8em;
+		font-size: 1.4rem;
+		line-height: 3.8rem;
 		text-align: right;
-		color: #fec200;
 		width: 33%;
 		vertical-align: top;
 	}
@@ -297,23 +232,14 @@ main section article{
 }
 	main section article.on{
 		height: auto;
-		top: 0;
-		margin-bottom: -300px;
+		top: -8rem;
 	}
-	main #work article.on{
-		top: -250px;
-	}
-	article .backTo{
-		font-size: .5em;
-		margin: 1em 0 0 -.9em;
-	}
-		article .backTo .fa{
-			font-size: .6em;
-		}
+
 	article img#banner{
 		width: 100%;
 		min-width: 800px;
 		margin-bottom: -11em;
+		opacity: 0.1;
 	}
 	article h2{
 		height: 2.5em;
@@ -321,9 +247,7 @@ main section article{
 		text-indent: .2em;
 		position: relative;
 		z-index: 30;
-		color: #fe9000;
 		font-size: 5rem;
-		text-shadow: 0 0 40px #009D9B;
 	}
 		article h2 b{
 			padding: 0 .1em;
@@ -343,27 +267,27 @@ main section article{
 		padding: 2em 0;
 	}
 main section p{
+	font-family: 'Courier', monospace;
 	max-width: 50em;
 	margin: 3em auto;
 	clear: both;
+	color: #eee;
 }
 	main section .lead{
 		margin-top: 0;
 	}
 p.lead{
 	max-width: 32em;
-	font-size: 1.2em;
+	font-size: 2.4rem;
 	line-height: 1.4em;
 	margin: 2em auto;
-	font-weight: 700;
 }
 p small{
 	font-size: .9em;
 }
 img.in{
-	padding: 1em;
-	margin: 4em auto;
-	background: #044;
+	padding: 0.5em;
+	margin: 2em 1em;
 }
 
 img.fw{
@@ -373,25 +297,24 @@ img.fw{
 }
 img.r{
 	float: right;
-	margin: 4em 1em;
+	margin: 1em 1em;
 	max-width: 30%;
 }
 img.c{
 	display: block;
-	margin: 4em auto;
+	margin: 1em auto;
 	max-width: 100%;
 }
 
 
 main #projNav{
-	padding: 0;
+	padding: 2em;
+	background: #fff;
 	list-style-type: none;
 }
 	#projNav li{
-		transition: all .4s;
 		overflow: hidden;
 		position: relative;
-		margin: 1rem 1%;
 	}
 		#projNav li:hover{
 
@@ -401,23 +324,26 @@ main #projNav{
 			top: -20%;
 			left: -99%;
 			position: absolute;
-			transition: all .3s ease-out;
+			transition: all .6s ease-out;
 			z-index: 2;
 			border: 0; outline: 0;
-			opacity: .8;
+			opacity: .4;
+			filter: blur(4px);
 		}
 			#projNav li:hover img{
 				left: 0;
 				opacity: 1;
 				animation: scroll_left 12s alternate infinite linear;
+				filter: blur(0px);
 			}
 		#projNav li a{
 			position: relative;
 			text-align: right;
 			display: block;
 			font-size: 2rem;
-			line-height: 1em;
-			padding-bottom: 5em;
+			line-height: 2em;
+			padding: 2em;
+			color: #fff;
 			z-index: 3;
 		}
 			#projNav li a b{
@@ -428,22 +354,24 @@ main #projNav{
 				line-height: 10rem;
 				margin: -.2em -.1em;
 
+
 			}
 			#projNav li a small{
 				position: absolute;
-				font-weight: bold;
-				right: -8em;
-				top: 20em;
+				right: -10em;
+				top: 8em;
 				font-size: 2rem;
-				line-height: 1em;
+				line-height: 3em;
 				padding: 0 .2em;
-				background: #fec200;
-				color: #044;
+				background: #fff;
+				color: #333;
 				transition: all .3s;
 			}
 			#projNav li:hover a small{
-				right: .3em;
+				right: 2em;
 			}
+
+/* what is this for? */
 @keyframes scroll_left{
 	0% 		{transform: translate(0);}
 	100% 	{transform: translate(-40%);}
@@ -463,7 +391,8 @@ main section .cta{
 	margin-bottom: 0;
 }
 
-
+/* small lanscape display or large portrait
+----------------------------------- */
 @media(min-width: 710px){
 	#projNav:after{
 		content: '';
@@ -473,12 +402,14 @@ main section .cta{
 		clear: both;
 	}
 	#projNav li{
-		width: 48%;
+		width: 50%;
+		height: 14em;
 		vertical-align: top;
 		float: left;
 	}
 	#projNav li.double{
-		width: 98%;
+		width: 100%;
+		height: 28em;
 	}
 	#projNav li a{
 		height: 14em;
@@ -488,16 +419,18 @@ main section .cta{
 	}
 	img.half{
 		float: left;
-		width: 49%;
-		margin: 1em .5%;
+		width: 50%;
 	}
 	img.third{
 		float: left;
-		width: 32.33%;
-		margin: 1em .5%;
+		width: 33.33%;
 	}
 }
-/*@media(min-width: 1330px){
+
+
+/* large display (probably landscape)
+----------------------------------- */
+@media(min-width: 1330px){
 	section > .cont,
 	article > .cont,
 	footer > .cont{
@@ -512,7 +445,7 @@ main section .cta{
 		top: -14rem;
 	}
 		article h2{
-			font-size: 9.3rem;
+			/*font-size: 6.4rem;*/
 		}
 		.stats{
 			padding: 1em;
@@ -520,20 +453,21 @@ main section .cta{
 		}
 		.stats th{
 			color: #fff;
-			text-shadow: 0 0 30px #222;
 
 		}
 		.stats td{
 			background: rgba(255, 255, 255, .9)
 		}
 	#projNav li{
-		width: 31.33%;
+		width: 33.33%;
+		height: 20em;
 	}
 	#projNav li.double{
-		width: 64.65%;
+		width: 66.66%;
+		height: 20em;
 	}
 	#projNav li.dHigh a{
 		height: 10em;
 	}
 
-}*/
+}
