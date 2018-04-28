@@ -35,6 +35,7 @@ $pTech = [
 
 $work = [
 	["title" => "CCS/shop",
+		"color" => "#4B38AB",
 		"banner" => "ccam-shop1.png",
 		"c-name" => "double",
 		"type" => 5,
@@ -45,8 +46,9 @@ $work = [
 		"tech" => [0, 2, 3, 5, 6, 8, 9],
 		"date" => "Dec 2016",
 		"path" => "ccam-shop/" 
-		],
+	],
 	["title" => "SSM",
+		"color" => "#871F1E",
 		"banner" => "ssm-app.png",
 		"type" => 7,
 		"link" => "https://www.mixcloud.com/seisme/",
@@ -55,10 +57,10 @@ $work = [
 		"role" => [0, 1, 2, 3],
 		"date" => "2016",
 		"path" => "ssm/"
-		],
+	],
 	["title" => "TS/web",
+		"color" => "#75BF12",
 		"banner" => "ts-web.png",
-		"c-name" => "dHigh",
 		"type" => 3,
 		"link" => "http://tripsolutions.co.uk",
 		"link-txt" => "tripsolutions.co.uk",
@@ -67,8 +69,9 @@ $work = [
 		"tech" => [0, 2, 3, 6, 10],
 		"date" => "2015",
 		"path" => "ts-web/"
-		],
+	],
 	["title" => "GWA/web",
+		"color" => "#C10001",
 		"banner" => "gwa.png",
 		"type" => 0,
 		"link" => "https://www.gowildaffiliates.com",
@@ -78,8 +81,9 @@ $work = [
 		"tech" => [0, 2, 3, 6, 10],
 		"date" => "2016",
 		"path" => "gwa/"
-		],
+	],
 	["title" => "CHR/b2b",
+		"color" => "#EF4E23",
 		"banner" => "chr-b2b.png",
 		"type" => 1,
 		"client" => "Cristian Tour",
@@ -87,16 +91,18 @@ $work = [
 		"tech" => [0, 2, 3, 9],
 		"date" => "2015",
 		"path" => "chr-b2b/"
-		],
+	],
 	["title" => "GOA/web",
+		"color" => "#15396B",
 		"banner" => "goa-web.png",
 		"type" => 7,
 		"client" => "Goa Way & Czech-It-Out",
 		"role" => [0, 2, 3, 4],
 		"date" => "2015",
 		"path" => "goa-web/"
-		],
+	],
 	["title" => "eT-A",
+		"color" => "#2B557D",
 		"banner" => "etrip-agency.png",
 		"link" => "http://www.etrip-agency.com/",
 		"link-txt" => "etrip-agency.com",
@@ -105,8 +111,9 @@ $work = [
 		"role" => [0, 2, 3, 4],
 		"date" => "2013-2014",
 		"path" => "etrip-agency/"
-		],
+	],
 	["title" => "SHC/web",
+		"color" => "#8A1213",
 		"banner" => "shc-web.png",
 		"type" => 3,
 		"link" => "http://www.swissholidayco.com/",
@@ -115,8 +122,9 @@ $work = [
 		"role" => [0, 2, 3, 4],
 		"date" => "Jan 2014",
 		"path" => "shc-web/"
-		],
+	],
 	["title" => "PB/web",
+		"color" => "#673D60",
 		"banner" => "purely-web.png",
 		"type" => 3,
 		"link" => "http://www.purelybermuda.co.uk/",
@@ -124,7 +132,7 @@ $work = [
 		"role" => [0, 2, 3, 4],
 		"date" => "Nov 2015",
 		"path" => "pb-web/"
-		]
+	]
 	// ["title" => "brands",
 	// 	"banner" => "brands.png",
 	// 	"type" => 6,

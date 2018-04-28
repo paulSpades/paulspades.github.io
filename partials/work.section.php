@@ -1,20 +1,14 @@
 <?php include 'dataset.php' ?> 
 
-
 <section id="work">
-
 <?php foreach ($work as $i=>$w) : ?>
-	<article class="work-proj" id="work/<?=$i?>">
+	<article class="work-proj" id="work/<?=$i?>" style="background-color: <?=$w["color"]?>">
+		<a href="#work" class="backTo"> <i class="fa fa-arrow-circle-left"></i> WORK </a>
 		<?php if(isset($w["banner"])): ?>
 			<img id="banner" src="proj/banners/<?= $w['banner'] ?>">
 		<?php endif;?>
 		<div class="cont">
-			<h2> 
-				<b>0<?=$i?></b> <?= $w["title"] ?> <br>
-				<a href="#work" class="backTo">
-					<i class="fa fa-arrow-circle-left"></i> WORK
-				</a>
-			</h2>
+			<h2> <b>0<?=$i?></b> <?= $w["title"] ?></h2>
 			<table class="stats">
 				<?php if(isset($w["client"])): ?>
 					<tr><th>client</th><td><?= $w["client"] ?></td></tr>
@@ -67,7 +61,7 @@
 	<h1>projects</h1>
 	<ul id="projNav">
 	<?php foreach ($work as $i=>$w): ?>
-		<li class="<?= $w['c-name'] ?>">
+		<li class="<?= $w['c-name'] ?>" style="background-color: <?=$w["color"]?>">
 			<img src="proj/banners/<?= $w['banner'] ?>">
 			<a href="#work/<?= $i ?>"> 
 				<b>0<?= $i ?></b> <?= $w["title"] ?>
@@ -79,7 +73,7 @@
 </div>
 
 <div class="cont cta">
-	<p class="lead">Like what you're seeing? Let's <a href="#info">get to know each other</a> , have a cup of coffee and discuss your next project. I might be able to help. </p>
+	<p class="lead">Like what you see? Let's <a href="#info">have a talk</a>, and discuss your next project. I might be able to help. </p>
 </div>
 
 </section>
