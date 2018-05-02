@@ -5,9 +5,9 @@
 	<title></title>
 	<link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,400i,500,700,900" rel="stylesheet"> 
 	<link rel="stylesheet" href="css/fontawesome-all.min.css">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/lib.css">
-	<link rel="stylesheet" href="css/queries.css">
+	<link rel="stylesheet" href="css/main.css?1">
+	<link rel="stylesheet" href="css/lib.css?1">
+	<link rel="stylesheet" href="css/queries.css?1">
 	</head>
 </head><body id="b">
 <header><div class="cont">
@@ -31,5 +31,5 @@
 </main><footer>
 </footer>
 	<script src="js/jquery_3.1.1.min.js"></script>
-	<script src="js/functions.js"></script>
+	<script src="js/functions.js?1"></script>
 </body></html>
