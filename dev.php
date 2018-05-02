@@ -5,8 +5,9 @@
 	<title></title>
 	<link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,400i,500,700,900" rel="stylesheet"> 
 	<link rel="stylesheet" href="css/fontawesome-all.min.css">
-	<link rel="stylesheet" href="css/lbp.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/lib.css">
+	<link rel="stylesheet" href="css/queries.css">
 	</head>
 </head><body id="b">
 <header><div class="cont">
@@ -25,10 +26,10 @@
 	include 'partials/lab.section.php';
 	include 'partials/log.section.php';
 	include 'partials/info.section.html';
-?>	
+?>
+
 </main><footer>
 </footer>
 	<script src="js/jquery_3.1.1.min.js"></script>
-	<script src="js/lightbox.min.js"></script>
 	<script src="js/functions.js"></script>
 </body></html>

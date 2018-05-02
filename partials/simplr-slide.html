@@ -1,0 +1,89 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style type="text/css">
+    body{ background: #333; color: #eee; text-align: center;}
+    ul{background: #ccc; color: #555; margin: 0;}
+    .slider li{display: none; padding: 5em;}
+    .slider li.on{display: block;}
+    .slider .ctrl{position: relative;}
+    .slider .ctrl button{width: 30%; height: 100%; position: absolute; border: 0; opacity: 0;}
+    .slider .ctrl button:hover, .slider .ctrl button:active{opacity: .6;}
+    .slider .ctrl .l{left: 0;}
+    .slider .ctrl .r{right: 0;}
+</style></head><body>
+  <h1>Simplr Slider</h1>
+  <div class="slider play" display: inline-block;">
+    <div class="ctrl">
+      <button class="l"> &laquo; </button>
+      <button class="r"> &raquo; </button>
+    </div>
+    <ul>
+      <li>SLIDE 1 <br><br><br></li>
+      <li class="on" style="background: #aaa; height: 5em;">SLIDE 2 <br> <small> yay! Go slider!</small></li>
+      <li>SLIDE 3</li>
+      <li style="background: #aaa; height: 2em;">SLIDE 4</li>
+    </ul>  
+  </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script>
+
+
+function slider(el, playing){
+  const $ul = $(el).find('ul'),
+    slides = $ul.find('li'),
+    autoplay = $(el).hasClass('play');
+  let on = $ul.find('.on');
+  
+  $(el).find('button.r').on('click', function(){advance(true);});
+  $(el).find('button.l').on('click', function(){advance(false);});
+  $(el).hover(function(){togglePlay(this)})
+
+
+  $ul.css({'overflow': 'hidden', 'list-style-type': 'none', 'padding': '0px'});
+  updateH($ul);
+
+  function updateH(){
+    $ul.css('height', $(on).outerHeight() + 'px');
+    $(el).find('button').css('height', $(on).outerHeight() + 'px');
+  };
+  function advance(dir){
+    let adv = dir ? $(on).next() : $(on).prev(), // next or prev
+      start = dir ? slides[0] : slides[slides.length -1]; // first or last
+
+    $(slides).removeClass('on');
+    if (adv.length > 0){ // if it's not the end
+      $(adv).addClass('on');
+      on = adv;
+    } else {
+      $(start).addClass('on');
+      on = start;
+    }
+    updateH();
+  };
+  function togglePlay(hovered){
+    if (autoplay){
+      $(hovered).toggleClass('play');
+    }
+  };
+  function play(){
+    if (el.hasClass('play')){
+      advance(true);
+    }
+  };
+
+  setInterval(function(){
+    play();
+  }, 2000);
+
+}
+
+
+// entry point
+$(function(){
+  $('.slider').each(function(i, el){
+    slider($(el));
+  });
+});
+</script></body></html>
+

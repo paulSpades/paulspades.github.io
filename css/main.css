@@ -4,71 +4,65 @@ html, body{
 	font-size: 10px;
 	line-height: 1.5em;
 	min-height: 101%;
-	font-family: 'Raleway', sans-serif;
-	color: #044;
+	font-family: 'Verdana', sans-serif;
+	color: #555;
 }
-body *{
-	box-sizing: border-box;
-}
-/*#imagelightbox{
-	position: fixed;
-	z-index: 9999;
-	-ms-touch-action: none;
-	touch-action: none;
-}*/
-
+body *{box-sizing: border-box; }
 body{
 	background: #009D9B;
 	overflow-x: hidden;
-	font-size: 1.6em;
-	line-height: 1.5em;
-	background: #fff;
-	background: linear-gradient(#eee 0px, #bbb 800px);
-	background-repeat: none;
-	background-size: 100% 105%;
+	font-size: 1.6rem;
+	line-height: 1.5rem;
+	background: linear-gradient(#999 0px, #eee 4000px);
+	background-repeat: no-repeat;
 }
-body.nav-on{
-	overflow: hidden;
-}
-header{
-}
-header .cont{
-	position: absolute;
-	height: 600px;
-	width: 100%;
-	font-size: 4.8rem;
-	line-height: 5.6rem;
-	overflow-x: hidden;
-}
-	.nav-on header .cont{
-		height: 100%;
-	}
+	body.nav-on{ overflow: hidden; }
 
-#toggleMain, #mainNav{
-	position: relative;
-	margin: 1em auto;
-	z-index: 30;
-}
-	#toggleMain{
-		display: block;
-		margin: .6em auto;
-		width: 2.5em;
-		height: 2.5em;
-		border-radius: 50%;
-	}
-		.nav-on #toggleMain i{
-			transform: rotate(270deg);
-		}
-#mainNav{
+header{
+	position: absolute; 
 	width: 100%;
-	top: -20em;
+	height: 0;
+	background: #fff;
+}
+	.nav-on header{
+		height: 100%;
+		z-index: 30;
+	}
+	header .cont{
+		height: 600px;
+		width: 100%;
+		font-size: 1.6rem;
+	}
+		.nav-on header .cont{
+			height: 100%;
+			background: rgba(255, 255, 255, .8);
+		}
+
+#toggleMain{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 31;
+	width: 2.5em;
+	height: 2.5em;
+	background: #fff;
+}
+	.nav-on #toggleMain i{
+		transform: rotate(270deg);
+	}
+#mainNav{
+	z-index: 30;
+	position: absolute;
+	top: -60em;
+	margin: 1em auto;
+	width: 100%;
 	transition: top .3s;
 }
-	.nav-on #mainNav{
-		top: 0;
-	}
+	.nav-on #mainNav{top: 3em; height: 1200px;}
 	#mainNav a{
-		text-transform: uppercase;
+		font-size: 3rem;
+		padding: .5em;
+		font-weight: bold;
 		text-decoration: none;
 		display: block;
 		margin: .1em 0;
@@ -78,7 +72,6 @@ header .cont{
 
 button{
 	background: none;
-	color: #00B19B;
 	font-size: 2.8rem;
 	line-height: 2em;
 	border: .1em solid transparent;
@@ -91,18 +84,17 @@ button{
 		transition: all .3s;
 	}
 		button:hover, button:active{
-			border-color: #FEC200;
+			border-color: #fff;
 		}
 nav a{
-	color: #fe9000;
+	color: #555;
 	position: relative;
 	overflow: hidden;
-	font-family: 'Courier', monospace;
 	transition: all .3s;
-	z-index: 30;
+	
 }
 	nav a:hover, nav a:focus, nav a:active{
-		color: #00B19B;
+		color: #333;
 	}
 	nav a:before{
 		content: '';
@@ -119,37 +111,23 @@ nav a{
 			height: 5px;
 			color: #00B19B;
 		}
-main{
-	opacity: 1;
-	transition: all .3s;
-}
-	main:after,
-	body:after{
-		content: '';
-		display: block;
-		height: 0;
-		width: 0;
-		clear: both;
-	}
-	.nav-on main{
-		opacity: 0;
-	}
 
+main{
+	padding: 0 0 0 7rem;
+	min-height: 100%;
+}
 	main section{
-		position: relative;
 		width: 100%;
 		height: 0;
 		margin: 0;
 		padding: 0;
+		transition: all .9s ease-out;
 		overflow: hidden;
-		transition: top .2s ease-out;
-		text-align: center;
-		font-size: 2.1rem;
-		line-height: 1.5em;
 		z-index: -1;
+		border-left: 1px solid #ddd;
 	}
 		main section.on{
-			top: 90px;
+			min-height: 100%;
 			height: auto;
 			overflow: visible;
 			z-index: 1;
@@ -158,56 +136,70 @@ main{
 		main section a,
 		footer p a{
 			text-decoration: none;
-			font-family: 'Courier', monospace;
 			padding: 0 .2em;
 		}
-	main section .cont{
+	main section > .cont{
 		width: 90%;
 		margin: 0 auto;
 		transition: all .5s ease-in;
 	}
 
 h1, h2, h3{
-	font-family: 'Courier', monospace;
 	line-height: 1em;
 	letter-spacing: -1px;
-	margin: .5em 0;
+	margin: 0;
 	font-weight: normal;
 }
-h1{font-size: 6.4rem; margin: 1em 0 .5em 0; text-align: right; color: #fff;}
-h3{font-size: 3.2rem; text-transform: uppercase; letter-spacing: 6px;}
-h2{font-size: 5.8rem; letter-spacing: 0;}
-	h2 b{color: #eee;}
-	.work-proj h2{line-height: .8em;}
+	h1{
+		position: relative;
+		top: 1em;
+		padding: 2em 0;
+		text-transform: uppercase;
+		letter-spacing: .6em;
+		font-size: 3rem;
+	}
+	h1 small{
+		position: absolute;
+		right: 0;
+		text-transform: none;
+		letter-spacing: 0px;
+		font-size: 1.8rem;
+		transform: rotate(90deg);
+	}
+	h2{
+		text-align: center;
+		font-size: 4.8rem;
+		line-height: 1.4em;
+	}
 
-.backTo{
-	margin: 1em;
-	font-size: 1.5em;
+.backTo, .nextArticle{
+	padding: 2.4rem;
+	font-size: 2.4rem;
 	font-weight: bold;
 	text-decoration: none;
 	color: #fff;
 	position: absolute;
-	top: ;
-	z-index: 30;
-	display: none;
+	top: 0;
+	z-index: 10;
 }
-	.on .backTo{
-		display: block;
+	.backTo:hover, .nextArticle:hover{
+		background: rgba(0,0,0, .2);
 	}
-	.backTo .fa{}
-
+.nextArticle{
+	right: 0;
+}
 .stats{
 	width: 100%;
 	vertical-align: top;
-	margin-bottom: 3em;
+	margin-bottom: 1em;
 }
 	.stats th, .stats td{
 		padding: .2em 1em;
 		line-height: 1.5em;
 	}
 	.stats th{
-		font-size: 1.4rem;
-		line-height: 3.8rem;
+		font-size: 1.6rem;
+		line-height: 2.4rem;
 		text-align: right;
 		width: 33%;
 		vertical-align: top;
@@ -216,43 +208,42 @@ h2{font-size: 5.8rem; letter-spacing: 0;}
 		text-align: left;
 		vertical-align: top;
 	}
-section > .cont,
-article > .cont,
-footer > .cont{
-	max-width: 1240px;
-}
 main section article{
 	position: relative;
-	top: -300px;
+	top: -4000px;
 	height: 0;
 	padding: 0;
 	overflow: hidden;
-	transition: top .2s ease-out;
+	transition: top .3s ease-out;
 	text-align: left;
 }
 	main section article.on{
+		top: 0;
 		height: auto;
-		top: -8rem;
+		padding-bottom: 2em;
 	}
 
-	article img#banner{
-		width: 100%;
-		min-width: 800px;
-		margin-bottom: -11em;
-		opacity: 0.1;
+	article img.banner{
+		position: absolute;
+		width: 256px;
+		top: 7em;
+		left: 50%;
+		margin-left: -128px;
+		border-radius: .5em;
+		z-index: 0;
+		box-shadow: 2px 5px 20px rgba(50, 30, 20, .2);
+	}
+	section article > .cont{
+		width: 90%;
+		margin: auto;
+		margin-top: 22em;
+		position: relative;
+		z-index: 1;
+		background: #eee;
 	}
 	article h2{
-		height: 2.5em;
-		text-align: left;
-		text-indent: .2em;
-		position: relative;
-		z-index: 30;
-		font-size: 5rem;
+		padding: .5em;
 	}
-		article h2 b{
-			padding: 0 .1em;
-			background: #044;
-		}
 
 	article .gallery{
 		list-style-type: none;
@@ -264,52 +255,22 @@ main section article{
 
 	article .description{
 		clear: both;
-		padding: 2em 0;
+		background: #eee;
+		padding: 1em;
 	}
 main section p{
-	font-family: 'Courier', monospace;
 	max-width: 50em;
 	margin: 3em auto;
 	clear: both;
-	color: #eee;
+	color: #333;
 }
 	main section .lead{
 		margin-top: 0;
 	}
-p.lead{
-	max-width: 32em;
-	font-size: 2.4rem;
-	line-height: 1.4em;
-	margin: 2em auto;
-}
-p small{
-	font-size: .9em;
-}
-img.in{
-	padding: 0.5em;
-	margin: 2em 1em;
-}
-
-img.fw{
-	display: block;
-	margin: 3em -25%;
-	width: 150%;
-}
-img.r{
-	float: right;
-	margin: 1em 1em;
-	max-width: 30%;
-}
-img.c{
-	display: block;
-	margin: 1em auto;
-	max-width: 100%;
-}
 
 
 main #projNav{
-	padding: 2em;
-	background: #fff;
+	padding:0;
 	list-style-type: none;
 }
 	#projNav li{
@@ -317,18 +278,17 @@ main #projNav{
 		position: relative;
 	}
 		#projNav li:hover{
-
 		}
 		#projNav li img{
-			width: 200%;
-			top: -20%;
-			left: -99%;
+			width: 800px;
+			top: .5em;
+			left: -200px;
 			position: absolute;
-			transition: all .6s ease-out;
+			transition: all .4s ease-out;
 			z-index: 2;
 			border: 0; outline: 0;
-			opacity: .4;
-			filter: blur(4px);
+			opacity: .8;
+			filter: blur(3px);
 		}
 			#projNav li:hover img{
 				left: 0;
@@ -342,132 +302,30 @@ main #projNav{
 			display: block;
 			font-size: 2rem;
 			line-height: 2em;
-			padding: 2em;
+			padding: 1.5em 2em;
 			color: #fff;
 			z-index: 3;
+			height: 10em;
 		}
 			#projNav li a b{
 				display: block;
-				color: #fff;
 				font-weight: bold;
 				font-size: 10rem;
 				line-height: 10rem;
-				margin: -.2em -.1em;
-
-
+				margin: -.2em 0;
+				letter-spacing: -1rem;
 			}
 			#projNav li a small{
 				position: absolute;
-				right: -10em;
-				top: 8em;
+				right: -20em;
+				top: 6.5em;
 				font-size: 2rem;
-				line-height: 3em;
-				padding: 0 .2em;
+				padding: .5em 3em .5em 1em;
 				background: #fff;
 				color: #333;
 				transition: all .3s;
 			}
 			#projNav li:hover a small{
-				right: 2em;
+				right: -1em;
 			}
 
-/* what is this for? */
-@keyframes scroll_left{
-	0% 		{transform: translate(0);}
-	100% 	{transform: translate(-40%);}
-}
-@keyframes scroll_left{
-	0% 		{transform: translate(0);}
-	100% 	{transform: translate(-40%);}
-}
-
-main section .cta{
-	clear: both;
-	margin-top: 5em;
-	margin-bottom: 8em;
-	padding: 2em;
-}
-.cta p.lead{
-	margin-bottom: 0;
-}
-
-/* small lanscape display or large portrait
------------------------------------ */
-@media(min-width: 710px){
-	#projNav:after{
-		content: '';
-		display: block;
-		height: 0;
-		width: 0;
-		clear: both;
-	}
-	#projNav li{
-		width: 50%;
-		height: 14em;
-		vertical-align: top;
-		float: left;
-	}
-	#projNav li.double{
-		width: 100%;
-		height: 28em;
-	}
-	#projNav li a{
-		height: 14em;
-	}
-	#projNav li img{
-		top: 0;
-	}
-	img.half{
-		float: left;
-		width: 50%;
-	}
-	img.third{
-		float: left;
-		width: 33.33%;
-	}
-}
-
-
-/* large display (probably landscape)
------------------------------------ */
-@media(min-width: 1330px){
-	section > .cont,
-	article > .cont,
-	footer > .cont{
-		max-width: 70%;
-	}
-
-	article h2, .stats{
-		width: 50%;
-		float: left;
-		position: relative;
-		z-index: 20;
-		top: -14rem;
-	}
-		article h2{
-			/*font-size: 6.4rem;*/
-		}
-		.stats{
-			padding: 1em;
-			border: 3px solid #fff;
-		}
-		.stats th{
-			color: #fff;
-
-		}
-		.stats td{
-			background: rgba(255, 255, 255, .9)
-		}
-	#projNav li{
-		width: 33.33%;
-		height: 20em;
-	}
-	#projNav li.double{
-		width: 66.66%;
-		height: 20em;
-	}
-	#projNav li.dHigh a{
-		height: 10em;
-	}
-
-}

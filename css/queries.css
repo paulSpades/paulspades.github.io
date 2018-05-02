@@ -1,0 +1,93 @@
+/* small lanscape display or large portrait
+----------------------------------- */
+@media(min-width: 710px){
+	article img.banner{ 
+		width: 521px; 
+		margin-left: -256px;
+	}
+	section article .cont{margin-top: 35em;}
+	article .stats{
+		padding: 2em;
+		margin: 0 auto;
+		width: 90%;
+		border: 3px solid #333;
+	}
+
+	h1{
+		letter-spacing: .7em;
+		font-size: 4.8rem;
+	}
+	h2{padding: 1em;}
+
+	#projNav li{
+		width: 50%;
+		height: 14em;
+		vertical-align: top;
+		float: left;
+	}
+	#projNav li.double{
+		width: 100%;
+	}
+	#projNav li a{
+		height: 14em;
+	}
+
+
+/* large display (probably landscape)
+----------------------------------- */
+@media(min-width: 1330px){
+	main section > .cont{
+		width: 100%;
+		max-width: 100%;
+	}
+	header{
+		width: 33.33%;
+	}
+	section > .cont > .title{
+		display: inline-block;
+		vertical-align: top;
+		width: 33%;
+	}
+		h1{text-align: center; padding: 2em;}
+			h1 small{ position: static; display: block; transform: rotate(0deg);}
+
+		h2{position: absolute; left: -30%; top: -7em; color: #fff; text-align: right;}
+			h2 b{display: block; font-size: 9.2rem;}
+
+	section .cont ul{
+		margin: 0;
+		display: inline-block;
+		vertical-align: top;
+		width: 66%;
+	}
+
+	section article .cont{
+		margin-left: 33.33%;
+		width: 66%;
+		margin-top: 30em;
+		padding-top: 2em;
+	}
+		article .description .lead{
+			position: relative;
+			left: -80%;
+			width: 40%;
+			margin-top: -10em;
+			color: #fff;
+		}
+		article img.banner{ top: 2em; left: 66%;}
+	
+	img.fw{margin: 0 0 0 -56.3%;}
+
+	#projNav li{
+		width: 33.33%;
+		height: 20em;
+	}
+	#projNav li.double{
+		width: 66.66%;
+	}
+	img.fw{
+		margin: 3em -60%;
+		width: 166%;
+	}
+
+}
