@@ -8,7 +8,7 @@ foreach ($work as $i=>$w) :
 		<a class="backTo" href="#work"> <i class="fa fa-level-up-alt"></i> back </a>
 		<a class="nextArticle" href="#work/<?= $next ?>"> <i class="fa fa-chevron-right"></i> </a>
 		<?php if(isset($w["banner"])): ?>
-			<img class="banner" src="proj/banners/<?= $w['banner'] ?>">
+			<img class="banner" src="proj/banners/<?= $w['banner'] .'?'. $version ?>">
 		<?php endif;?>
 		<div class="cont">
 			<h2> <b>0<?=$i?></b> <?= $w["title"] ?></h2>
@@ -52,6 +52,16 @@ foreach ($work as $i=>$w) :
 					include "proj/{$w['path']}desc.html";
 				} ?>
 			</div>
+				<?php if(isset($w["img"])): ?>
+				<div class="gall">
+					<?php foreach($w["img"] as $img): ?>
+						<a href="proj/<?= $w['path']?><?= $img ?>.png"><img src="proj/<?= $w['path']?>thumbs/<?= $img ?>.png"></a>
+					<?php endforeach; ?>
+					<div class="gall-cont">
+						<img src="proj/<?= $w['path']?><?= $w['img'][0] ?>.png">
+					</div>
+				</div> <br>
+				<?php endif; ?>
 			<?php endif; ?>
 		</div>
 	</article>

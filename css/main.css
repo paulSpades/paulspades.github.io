@@ -9,12 +9,13 @@ html, body{
 }
 body *{box-sizing: border-box; }
 body{
-	background: #009D9B;
 	overflow-x: hidden;
 	font-size: 1.6rem;
 	line-height: 1.5rem;
-	background: linear-gradient(#999 0px, #eee 4000px);
-	background-repeat: no-repeat;
+	background-color: #fff;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
 }
 	body.nav-on{ overflow: hidden; }
 
@@ -137,6 +138,7 @@ main{
 		footer p a{
 			text-decoration: none;
 			padding: 0 .2em;
+			color: #111;
 		}
 	main section > .cont{
 		width: 90%;
@@ -168,7 +170,7 @@ h1, h2, h3{
 	}
 	h2{
 		text-align: center;
-		font-size: 4.8rem;
+		font-size: 4.2rem;
 		line-height: 1.4em;
 	}
 
@@ -191,7 +193,7 @@ h1, h2, h3{
 .stats{
 	width: 100%;
 	vertical-align: top;
-	margin-bottom: 1em;
+	margin-bottom: 2em;
 }
 	.stats th, .stats td{
 		padding: .2em 1em;
@@ -235,8 +237,7 @@ main section article{
 	}
 	section article > .cont{
 		width: 90%;
-		margin: auto;
-		margin-top: 22em;
+		margin: 22em auto 0 auto;
 		position: relative;
 		z-index: 1;
 		background: #eee;
@@ -256,13 +257,14 @@ main section article{
 	article .description{
 		clear: both;
 		background: #eee;
-		padding: 1em;
+		padding: 2em 1em;
 	}
 main section p{
 	max-width: 50em;
 	margin: 3em auto;
 	clear: both;
 	color: #333;
+	font-family: monospace;
 }
 	main section .lead{
 		margin-top: 0;
@@ -270,7 +272,7 @@ main section p{
 
 
 main #projNav{
-	padding:0;
+	padding: 2em 0;
 	list-style-type: none;
 }
 	#projNav li{
@@ -288,7 +290,7 @@ main #projNav{
 			z-index: 2;
 			border: 0; outline: 0;
 			opacity: .8;
-			filter: blur(3px);
+			filter: blur(4px);
 		}
 			#projNav li:hover img{
 				left: 0;
@@ -328,4 +330,40 @@ main #projNav{
 			#projNav li:hover a small{
 				right: -1em;
 			}
+
+main .gall{
+	position: relative;
+	margin: 1em;
+	padding: 1em;
+	border: 3px solid #222;
+}
+	.gall a{
+		display: inline-block; 
+		width: 12%;
+		margin-bottom: 1em;
+		background: #fff;
+		padding: 0;
+	}
+		.gall a img{
+			max-width: 100%;
+			transition: all .2s;
+		}
+		.gall a:hover img, 
+		.gall a:focus img{
+			opacity: .6;
+		} 
+
+	.gall-cont{
+		position: relative;
+		display: block;
+		width: 100%;
+		padding: 1em;
+		text-align: center;
+		max-height: 400px;
+		overflow: auto;
+		background-color: #222;
+	}
+		.gall-cont img{
+			max-width: 100%;
+		}
 

@@ -32,6 +32,8 @@
 		height: 14em;
 	}
 
+	.gall-cont{ max-height: 600px; }
+
 
 /* large display (probably landscape)
 ----------------------------------- */
@@ -51,7 +53,13 @@
 		h1{text-align: center; padding: 2em;}
 			h1 small{ position: static; display: block; transform: rotate(0deg);}
 
-		h2{position: absolute; left: -30%; top: -7em; color: #fff; text-align: right;}
+		h2{
+			position: absolute; 
+			width: 60%;
+			right: 85%; top: -7em; 
+			color: #fff; 
+			text-align: right;
+		}
 			h2 b{display: block; font-size: 9.2rem;}
 
 	section .cont ul{
@@ -75,8 +83,6 @@
 			color: #fff;
 		}
 		article img.banner{ top: 2em; left: 66%;}
-	
-	img.fw{margin: 0 0 0 -56.3%;}
 
 	#projNav li{
 		width: 33.33%;
@@ -89,5 +95,11 @@
 		margin: 3em -60%;
 		width: 166%;
 	}
+	.gall-cont{
+		margin-left: -55%;
+		width: 155%;
+		max-height: 720px;
+	}
+
 
 }

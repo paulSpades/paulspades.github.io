@@ -1,25 +1,26 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><style type="text/css">
     body{ background: #333; color: #eee; text-align: center;}
-    ul{background: #ccc; color: #555; margin: 0;}
+    .slider{height: 20em; overflow-y: auto;}
+    .slider ul{background: #ccc; color: #555; margin: 0; padding: 0; list-style-type: none;}
     .slider li{display: none; padding: 5em;}
     .slider li.on{display: block;}
     .slider .ctrl{position: relative;}
-    .slider .ctrl button{width: 30%; height: 100%; position: absolute; border: 0; opacity: 0;}
+    .slider .ctrl button{width: 25%; height: 100%; position: absolute; border: 0; opacity: 0;}
     .slider .ctrl button:hover, .slider .ctrl button:active{opacity: .6;}
     .slider .ctrl .l{left: 0;}
     .slider .ctrl .r{right: 0;}
 </style></head><body>
   <h1>Simplr Slider</h1>
-  <div class="slider play" display: inline-block;">
+  <div class="slider thumbs" display: inline-block;">
     <div class="ctrl">
       <button class="l"> &laquo; </button>
       <button class="r"> &raquo; </button>
     </div>
     <ul>
-      <li>SLIDE 1 <br><br><br></li>
-      <li class="on" style="background: #aaa; height: 5em;">SLIDE 2 <br> <small> yay! Go slider!</small></li>
-      <li>SLIDE 3</li>
-      <li style="background: #aaa; height: 2em;">SLIDE 4</li>
+      <li> <br><br><br> SLIDE 1 <br><br><br><br><br><br> <small> yay! Go slider!</small> <br><br> </li>
+      <li class="on" style="background: #aaa; height: 5em;">SLIDE 2 <br> <small> yay! Go slider!</small> <br><br><br><br><br> </li>
+      <li>SLIDE 3 <br><br><br><br><br><br><br><br><br> <small> yay! Go slider!</small> <br><br><br><br> </li>
+      <li style="background: #aaa; height: 2em;"> <br><br><br> SLIDE 4 <small> yay! Go slider!</small> <br><br><br><br> </li>
     </ul>  
   </div>
 
@@ -40,7 +41,7 @@ function slider(el, playing){
   $(el).hover(function(){togglePlay(this)})
 
 
-  $ul.css({'overflow': 'hidden', 'list-style-type': 'none', 'padding': '0px'});
+  $ul.css({'list-style-type': 'none', 'padding': '0px'});
   updateH($ul);
 
   function updateH(){
@@ -61,6 +62,10 @@ function slider(el, playing){
     }
     updateH();
   };
+  function jump(){
+    if(el.hasClass(''))
+
+  }
   function togglePlay(hovered){
     if (autoplay){
       $(hovered).toggleClass('play');
