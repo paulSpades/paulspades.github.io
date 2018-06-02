@@ -12,7 +12,6 @@ $(function(){
 	});
 	$('div.gall a').click(function(e){
 		$(this).closest('.gall').find('.gall-cont img').attr('src', this.href);
-		// console.log(this.href, $(this).closest('.gall').find('.gall-cont img').attr('src'));
 		return false;
 	});
 });

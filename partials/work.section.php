@@ -55,10 +55,10 @@ foreach ($work as $i=>$w) :
 				<?php if(isset($w["img"])): ?>
 				<div class="gall">
 					<?php foreach($w["img"] as $img): ?>
-						<a href="proj/<?= $w['path']?><?= $img ?>.png"><img src="proj/<?= $w['path']?>thumbs/<?= $img ?>.png"></a>
+						<a href="proj/<?= $w['path']?><?= $img ?>-min.png"><img src="proj/<?= $w['path']?>thumbs/<?= $img ?>-min.png"></a>
 					<?php endforeach; ?>
 					<div class="gall-cont">
-						<img src="proj/<?= $w['path']?><?= $w['img'][0] ?>.png">
+						<img src="proj/<?= $w['path']?><?= $w['img'][0] ?>-min.png">
 					</div>
 				</div> <br>
 				<?php endif; ?>
