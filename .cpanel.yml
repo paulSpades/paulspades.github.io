@@ -1,4 +1,4 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/user/public_html/stoleriu
+    - export DEPLOYPATH=/home/nowhites/public_html/no-whitespace.com/stoleriu
